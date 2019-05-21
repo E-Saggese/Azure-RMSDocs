@@ -152,8 +152,9 @@ For information about the additional requirements for this scenario, see [On-pre
 
 ### Coexistence of AD RMS with Azure RMS
 
-The following deployment scenario is not supported unless you are using AD RMS for [HYOK protection](configure-adrms-restrictions.md) with Azure Information Protection (the "hold your own key" configuration):
+Running AD RMS and Azure RMS dise by side in the same organization is only supported in the following two scenarios:
 
-- Running AD RMS and Azure RMS side by side in the same organization, except during migration, as described in [Migrating from AD RMS to Azure Information Protection](migrate-from-ad-rms-to-azure-rms.md).
+- If you are using AD RMS for [Hold your own Key protection](configure-adrms-restrictions.md) with Azure Information Protection, a configuration in which some labels are configured to use protection with a cloud key (MS Managed key or Bring your own Key) while others use an on-premises key (HYOK). 
+- During migration from AD RMS to Azure RMS, as described in [Migrating from AD RMS to Azure Information Protection](migrate-from-ad-rms-to-azure-rms.md).
 
 There is a supported migration path [from AD RMS to Azure Information Protection](https://technet.microsoft.com/library/Dn858447.aspx), and from [Azure Information Protection to AD RMS](/powershell/module/aadrm/Set-AadrmMigrationUrl). If you deploy Azure Information Protection and then decide that you no longer want to use this cloud service, see [Decommissioning and deactivating Azure Information Protection](decommission-deactivate.md).
