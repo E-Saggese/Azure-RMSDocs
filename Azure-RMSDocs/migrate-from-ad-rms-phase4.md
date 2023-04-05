@@ -157,6 +157,8 @@ Do not start step 5 yet from the connector instructions.
 
 #### Registry edits for Exchange
 
+In this step you will add redirections in the registry to the Exchange servers so they know how to route Azure RMS and AD RMS calls through the connector. If you added registry values under `HKLM\SOFTWARE\Microsoft\ExchangeServer\v15\IRM\LicenseServerRedirection` during the preparation step ([Phase 1: Preparation](./migrate-from-ad-rms-phase1#if-you-have-integrated-exchange-on-premises-with-ad-rms)), you need to remove them before adding new redirections to this location. 
+
 For all Exchange servers, add the following registry values to LicenseServerRedirection, depending on your versions of Exchange:
 
 1. For both **Exchange 2013 and Exchange 2016**, add the following registry value:
@@ -188,4 +190,4 @@ For all Exchange servers, add the following registry values to LicenseServerRedi
         - `https://<connector FQDN>/_wmcs/licensing`
 
 ## Next steps
-To continue the migration, go to [phase 5 -post migration tasks](migrate-from-ad-rms-phase5.md).
+To continue the migration, go to [phase 5 -post migration tasks](migrate-from-ad-rms-phase5).
